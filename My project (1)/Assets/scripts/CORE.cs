@@ -6,6 +6,7 @@ public class CORE : MonoBehaviour
 {
     public Transform enemyPrefab;
     public Transform spawnPoint;
+    public int force;
 
     private static List<GameObject> theRooms = new List<GameObject>();
 
@@ -23,11 +24,12 @@ public class CORE : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 20; i++)
         {
-            print(Random.Range(1, 10));
+            Rigidbody rb = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
+
+            rb.velocity = new Vector3(Random.Range(-10, 10) * force, 0, Random.Range(-10, 10) * force);
         }
-        Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
     }
 
     // Update is called once per frame
