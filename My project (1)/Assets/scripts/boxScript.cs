@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class boxScript : MonoBehaviour
 {
+    private Enemy me = new Enemy();
+
     private int count;
     public GameObject thePlayer;
     private Vector3 playerPosition;
@@ -18,6 +20,8 @@ public class boxScript : MonoBehaviour
         count = 0;
         rb = this.gameObject.GetComponent<Rigidbody>();
         agent = this.gameObject.GetComponent<NavMeshAgent>();
+
+        CORE.setEnemy(me);
         //agent.speed = 20f;
         //agent.Warp(thePlayer.transform.position);
     }

@@ -5,10 +5,12 @@ using UnityEngine;
 public class Room
 {
     private Player thePlayer;
+    private Enemy theEnemy;
 
     public Room()
     {
         this.thePlayer = null;
+        this.theEnemy = null;
     }
 
     public void setPlayer(Player p)
@@ -20,5 +22,15 @@ public class Room
     public Player getPlayer()
     {
         return this.thePlayer;
+    }
+
+    public void setEnemy(Enemy e)
+    {
+        this.theEnemy = e;
+    }
+
+    public Enemy getEnemy()
+    {
+        return this.theEnemy;
     }
 }
