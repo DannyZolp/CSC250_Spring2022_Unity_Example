@@ -34,6 +34,14 @@ public class roomTriggerScript : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag.Equals("Player") && this.thisRoom.getEnemy() == null)
+        {
+            Object.Destroy(gameObject);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

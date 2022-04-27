@@ -29,4 +29,9 @@ public class Room
     {
         return this.thePlayer;
     }
+
+    public Enemy getEnemy()
+    {
+        return this.theEnemy;
+    }
 }
